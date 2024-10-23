@@ -18,7 +18,7 @@ For now the only way to install yt-dlp is to build from the source code. Release
 
 1. Clone the repository.
 2. **Optional but strongly recommended:**Download ffmpeg and ffprobe for your operating system 
-  [here](https://www.ffmpeg.org/). Without them, downloads may be limited to 720p or lower. Copy the files to the **bin** directory of this project **OR** install them system-wide.
+  [here](https://www.ffmpeg.org/). Without them, downloads may be limited to 720p or lower. Copy the files to the **bin** directory of this project.
 3. Install the yt-dlp python module. `pip install -r requirements.txt`
 4. In the **src** folder, run **main.py**.
 
