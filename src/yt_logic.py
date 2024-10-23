@@ -10,14 +10,17 @@ BIN_DIR = os.path.join(PROJECT_DIR, 'bin')  # path to bin/
 def download_video(url, download_dir, file_type, with_subs, on_progress_hook, on_success, on_error):
     def worker():
         if file_type == 'audio only':
-            fformat = 'bestaudio'
+            _format = 'bestaudio'
         elif file_type == 'video only':
-            fformat = 'bestvideo'
+            _format = 'bestvideo'
         else:
-            fformat = 'bestvideo+bestaudio'
+            if 'ffmpeg' in os.listdir(BIN_DIR) or 'ffmpeg.exe' in os.listdir(BIN_DIR):
+                _format = 'bestvideo+bestaudio'
+            else:
+                _format = 'best'
 
         options = {
-            'format': fformat,
+            'format': _format,
             'writesubtitles': with_subs,
             'progress_hooks': [on_progress_hook],
             'ffmpeg_location': BIN_DIR,
