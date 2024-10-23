@@ -12,6 +12,7 @@ CARET_ICON = os.path.join(ytl.PROJECT_DIR, 'src', 'res', 'icons', 'caret_icon.pn
 
 DEFAULT_TEXT = 'Paste your video or playlist link here'
 
+DEFAULT_DOWNLOAD_DIR = os.path.join(os.path.expanduser('~'), 'Desktop')
 
 class MainApplication:
     def __init__(self):
@@ -137,7 +138,7 @@ class MainApplication:
         self.dllabel.grid(row=3, columnspan=2, sticky=tk.W)
 
         # --------Path to download directory as string---------#
-        self.download_dir = tk.StringVar(self.bframe, os.path.join(os.environ['USERPROFILE'], 'Desktop'))
+        self.download_dir = tk.StringVar(self.bframe, DEFAULT_DOWNLOAD_DIR)
         # Download location button
         self.download_dir_btn = tk.Button(
             self.bframe,
